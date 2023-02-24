@@ -1,0 +1,68 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(224,122,95);
+    background: linear-gradient(0deg, rgba(224,122,95,1) -5%, rgb(174, 177, 117) 19%, rgb(60, 95, 126) 53%, rgb(58, 45, 71) 100%);
+
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.5;
+}
+
+.moons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: min(90vw, 800px);
+}
+
+.moons--hide {
+    display: none;
+}
+
+.moon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 6em;
+    transition: transform 0.1s;
+}
+
+.moon:hover {
+   transform: scale(1.1);
+}
+
+.popup-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-wrapper--open {
+    display: flex;
+}
+
+.popup {
+    padding: max(1em, 3vw);
+    background-color: #FFD3E8;
+    max-width: min(800px, 90vw);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: min(2em, 7vw);
+    border-radius: 10px;
+}

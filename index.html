@@ -1,12 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>С Днём рождения!</title>
-</head>
-<body>
-    
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="moons">
+      <button type="button" class="moon">🌝</button>
+      <button type="button" class="moon">🌕</button>
+      <button type="button" class="moon">🌖</button>
+      <button type="button" class="moon">🌗</button>
+      <button type="button" class="moon">🌘</button>
+      <button type="button" class="moon">🌑</button>
+      <button type="button" class="moon">🌒</button>
+      <button type="button" class="moon">🌓</button>
+      <button type="button" class="moon">🌔</button>
+      <button type="button" class="moon">🌙</button>
+    </section>
+    <div class="popup-wrapper">
+      <div class="popup">
+        Вы получаете…
+        <p class="prize"></p>
+        <p>С Днём рождения!!!</p>
+      </div>
+    </div>
+
+    <script>
+      "use strict";
+      const popup = document.querySelector(".popup-wrapper");
+      const buttons = document.querySelectorAll(".moon");
+      const moons = document.querySelector('.moons')
+      const prize = document.querySelector('.prize')
+      const prizes = [
+        "cертификат на поход в кино с проведением авторской лекции",
+        "cертификат на маракуйю с горгонзолой в севичерии",
+        "cертификат на приготовление авторского ужина",
+        "cертификат на посещение культурного мероприятия категории «кринж»",
+        "сертификат на составление списка чего-либо из 10 пунктов",
+        "сертификат на посиделки в баре",
+        "сертификат на гадание на картах таро в авторской методике «я впервые вижу карты таро и гадаю по ним»",
+        "сертификат на совместное посещение любого культурного мероприятия",
+        "сертификат на посещение шведской кофейни и поедание шведских булочек!",
+        "сертификат на три занятия по шведскому языку: выучим алфавит, научимся паре колких фразочек",
+      ];
+      buttons.forEach((button) => button.addEventListener("click", showPrize));
+
+      function showPrize() {
+        popup.classList.add('popup-wrapper--open');
+        moons.classList.add('moons--hide')
+        prize.textContent = prizes[Math.floor(Math.random()*prizes.length)];
+      }
+    </script>
+  </body>
 </html>
