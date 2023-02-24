@@ -19,7 +19,7 @@ body {
     rgb(60, 95, 126) 53%,
     rgb(58, 45, 71) 100%
   );
-
+  background-attachment: fixed;
   font-family: "Press Start 2P", cursive;
   line-height: 1.5;
 }
